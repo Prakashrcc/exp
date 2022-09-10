@@ -1,0 +1,373 @@
+.qr-container {
+    width: 20%;
+    text-align: center;
+    padding: 4%;
+}
+
+img {
+    width: 100%;
+}
+
+.qr-box {
+    
+    display: flex;
+    padding: 0;
+
+}
+
+.container {
+    padding-top: 5%;
+}
+
+.title {
+    color: #141D38;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #c5c5c5;
+}
+
+.flex {
+    display: flex;
+}
+
+button {
+    margin: 0;
+}
+
+.margin-left {
+    margin-left: 20px;
+}
+
+.info-text {
+    font-size: 13px;
+}
+
+.qr-text {
+    font-weight: bold;
+}
+
+.reward-container {
+    height:400px;
+    background-repeat: no-repeat;
+    padding: 0px;
+    position: relative;
+    margin-top: 60px;
+    border-radius: 10px;
+}
+
+.reward-img {
+    height:100%;
+    width: 100%;
+    filter: brightness(0.5);
+    border-radius: 10px;
+}
+
+.plan-img {
+    height:100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.plan-row {
+    margin-top: 320px;
+    color: white;
+    font-size: 18px;
+}
+
+.reward-text-container {
+    position: absolute;
+    top: 0;
+    width: 90%;
+    left: 100px;
+
+}
+
+.width-20{
+    width:30%;
+}
+
+.reward-title {
+    width: 30%;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    margin-top: 80px;
+}
+
+.reward-text {
+    width: 20%;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.reward-btn {
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.text-footer {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.link {
+    color: #3662D8;
+    margin:0;
+}
+
+.text {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.padding {
+    padding-left: 5%;
+}
+
+/* Style the tab */
+.tab {
+    text-align: center;
+    height: 100%;
+    display: block;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+    height: 100%;
+    font-weight:bold;
+    margin-left: 25px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    border-bottom:1px solid black;
+
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    border-bottom:1px solid blue;
+    color: blue;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
+
+  .tab-body {
+    width:90%;
+    margin-left:5%;
+    margin-bottom: 30px;
+  }
+
+  .input-text {
+    
+  }
+
+  .input-container {
+    padding:10px;
+    font-size: 18px;
+    position: relative;
+  }
+
+  .input {
+    cursor:pointer;
+    display: flex;
+    height: 55px;
+  }
+
+  .input:hover {
+    border:1px solid black;
+  }
+
+  .date-container {
+    padding: 0;
+    padding-left: 10px;
+  }
+
+  .icon {
+    margin: auto;
+  }
+
+  .cont {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .placeholder {
+    font-size: 13px;
+    color: #8f8c8c;
+  }
+
+  .going-text {
+    width: 100%;
+    margin: auto;
+    padding-left: 10px;
+  }
+
+  .margin-left-auto {
+    margin: auto;
+    margin-left: 10px;
+  }
+
+  .input-search-container {
+    display: none;
+    position: absolute;
+    width: 97%;
+    margin: 0;
+    top: 0px;
+    z-index: 2;
+    background: white;
+    margin-top: 10px;
+    padding: 0;
+    border-radius: 5px;
+    -webkit-animation-name: menu-grow-left, menu-fade-in;
+    animation-name: menu-grow-left, menu-fade-in;
+    box-shadow: 0px 0.5rem 1rem 0px rgb(0 11 38 / 24%);
+    -webkit-animation-delay: 0ms, 60ms;
+    animation-delay: 0ms, 60ms;
+    -webkit-animation-duration: 180ms, 60ms;
+    animation-duration: 180ms, 60ms;
+
+  }
+
+  .no-margin {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .search-input {
+    border: none;
+    font-weight: bold;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .search-input:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  input {
+    border: none;
+    cursor: pointer;
+  }
+
+  input:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  .search-input-row {
+    height: 60px;
+    border-bottom: 1px solid #c5c5c5;
+  }
+
+  #traveller-container {
+    top: auto;
+  }
+
+  .circle {
+    padding: 15px;
+    /* border-radius: 30px; */
+    align-items: center;
+    background: #FFFFFF;
+    block-size: 2rem;
+    border-color: #727483;
+    border-radius: 2500rem;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    inline-size: 2rem;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .circle:hover {
+    border-color: #3662D8;
+  }
+
+  .no {
+    padding: 0 10px;
+  }
+
+  .circle-container {
+    width: 30%;
+    display: flex;
+  }
+
+  .traveller-container {
+    width: 70%;
+  }
+
+  .no-border {
+    border: none;
+  }
+
+  h4 {
+    
+    font-size: 13px;
+
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .places-container {
+    height: 300px;
+    overflow: auto;
+  }
+
+  .search-item {
+    display: flex;
+    /* padding: 20px; */
+    padding-left: 20px;
+    cursor: pointer;
+  }
+
+  .search-item:hover {
+    background-color: rgba(94, 94, 252, 0.123);
+  }
+
+  .icon-cont {
+    margin: auto;
+    width: 20px;
+  }
+
+  .name-cont {
+    width: 100%;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .small-text {
+    font-weight: 100;
+    color: grey;
+    font-size: 13px;
+  }
+
+  .div-item {
+    display: flex;
+    width: 100%;
+  }

@@ -1,0 +1,444 @@
+<div class="container" style="    padding-top: 30px;">
+  <div class="row search-container">
+    <div class="col-12">
+        <div class="row tab-container">
+          <div class="tab">
+            <button class="tablinks active" (click)="openTab($event, 'Stays')">Hotels</button>
+            <button class="tablinks" (click)="openTab($event, 'Flights')">Flights</button>
+            <button class="tablinks" (click)="openTab($event, 'Cars')">Cars</button>
+            <button class="tablinks" (click)="openTab($event, 'Packages')">Activities</button>
+            <button class="tablinks" (click)="openTab($event, 'Things')">Things to do</button>
+          </div>
+        </div>
+        <div class="row tab-body">
+          <div id="Stays" class="tabcontent" style="display:block;">
+            <div class="container" style="    padding-top: 1%;">
+              <div class="row" style="display: flex;">
+                <div class="col-5 input-container" (mouseleave)="mouseOutHandler()" (mouseenter)="mouseInHandler()" style="width:40%">
+                  <div class="input" (click)="openSearch($event,'input-search-container')">
+                    <i class="fa fa-map-marker " aria-hidden="true" style="margin:auto;"></i>
+                    <span class="input-text going-text">Going to</span>
+                  </div>
+                  <div id="input-search-container" class="container input-search-container">
+                    <div class="row no-margin search-input-row" >
+                      <input type="text" id="searchInput" class="search-input" (keyup)="getAutosuggest($event)" placeholder="Where are you going?">
+                    </div>
+                    <div class="places-container">
+                      
+                      <div class="row no-margin search-item"  *ngFor='let place of autoSuggestData;'>
+                        <div class="row no-margin div-item" (click)="selectPlace($event,place)">
+                          <div class="icon-cont" >
+                            <i class="fa fa-map-marker " aria-hidden="true" style="margin:auto;"></i>
+                          </div>
+                          <div class="name-cont">
+                            <span>{{ place.cn }}</span><br>
+                            <span class="small-text">{{place.c}}</span>
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
+                      <div class="row no-margin" *ngIf="autoSuggestData?.length == 0">
+                        <span >No City Found</span>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-2 input-container"  style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Check-in</span><br>
+                      <span class="input-text">
+                        <input type="date" [(ngModel)]="activityStartDate" id="activityStartDate" >
+                      </span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-2 input-container" style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Check-out</span><br>
+                      <input type="date" [(ngModel)]="activityEndDate" id="activityEndDate" >
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-3 input-container" (mouseleave)="mouseOutHandler()" (mouseenter)="mouseInHandler()" style="width:30%">
+                  <div class="input date-container" (click)="openSearch($event,'traveller-container')">
+                    <div class="icon">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Travellers</span><br>
+                      <span class="input-text">1 room, 2 travellers</span>
+                    </div>
+                    
+                  </div>
+                  <div id="traveller-container" class="container input-search-container">
+                    <div class="row no-margin search-input-row no-border" >
+                      <span class="title">Travellers</span><br>
+                      <span>Room 1</span><br>
+                    </div>
+                    <div class="row no-margin" style="display: flex;">
+                      <div class="col-7 traveller-container">
+                        <h4>Adults</h4>
+                      </div>
+                      <div class="col-5 circle-container">
+                        <span class="circle">-</span>
+                        <span class="no">1</span>
+                        <span class="circle">+</span>
+                      </div>
+                      
+                    </div>
+                    <div class="row no-margin" style="display: flex;">
+                      <div class="col-7 traveller-container">
+                        <h4>Children</h4>
+                        <h4>Ages 0 to 17</h4>
+                      </div>
+                      <div class="col-5 circle-container">
+                        <span class="circle">-</span>
+                        <span class="no">1</span>
+                        <span class="circle">+</span>
+                      </div>
+                      
+                    </div>
+                    <div class="row no-margin button-cont" style="display: flex;">
+                      <Button type="button " class="btn full-width">Done</Button>
+                    </div>
+                  </div>
+              </div>
+              </div>
+              <!--<div class="row">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Flight" style="    margin-left: 20px;">
+                <label for="vehicle1" style="    margin-left: 10px;
+                margin-right: 20px;font-weight: 100;"> Add a Flight</label>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                <label for="vehicle2" style="    margin-left: 10px;
+                margin-right: 20px;font-weight: 100;"> Add a Car</label><br>
+              </div>-->
+            </div>
+          </div>
+          <div id="Flights" class="tabcontent" >
+            <div class="container" style="    padding-top: 1%;">
+              <div class="row" style="display: flex;">
+                <div class="col-5 input-container" style="width:40%">
+                  <div class="input">
+                    <i class="fa fa-map-marker " aria-hidden="true" style="margin:auto;"></i>
+                    <span class="input-text going-text">Going to</span>
+                  </div>
+                </div>
+                <div class="col-2 input-container" style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Check-in</span><br>
+                      <span class="input-text">18 Sep</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-2 input-container" style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Check-out</span><br>
+                      <span class="input-text">19 Sep</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-3 input-container" style="width:30%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Travellers</span><br>
+                      <span class="input-text">1 room, 2 travellers</span>
+                    </div>
+                    
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          </div>
+          <div id="Cars" class="tabcontent">
+            <div class="container" style="    padding-top: 1%;">
+              <div class="row" style="display: flex;">
+                <div class="col-5 input-container" style="width:40%">
+                  <div class="input">
+                    <i class="fa fa-map-marker " aria-hidden="true" style="margin:auto;"></i>
+                    <span class="input-text going-text">Going to</span>
+                  </div>
+                </div>
+                <div class="col-2 input-container" style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Check-in</span><br>
+                      <span class="input-text">18 Sep</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-2 input-container" style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Check-out</span><br>
+                      <span class="input-text">19 Sep</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-3 input-container" style="width:30%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Travellers</span><br>
+                      <span class="input-text">1 room, 2 travellers</span>
+                    </div>
+                    
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          </div>
+          <div id="Packages" class="tabcontent" >
+            <div class="container" style="    padding-top: 1%;">
+              <div class="row" style="display: flex;">
+                <div class="col-5 input-container" (mouseleave)="mouseOutHandler()" (mouseenter)="mouseInHandler()" style="width:40%">
+                  <div class="input" (click)="openSearch($event,'input-search-container-activity')">
+                    <i class="fa fa-map-marker " aria-hidden="true" style="margin:auto;"></i>
+                    <span class="input-text going-text">{{selectedPlace.name}}</span>
+                  </div>
+                  <div id="input-search-container-activity" class="container input-search-container">
+                    <div class="row no-margin search-input-row" >
+                      <input type="text" id="searchInput" class="search-input" (keyup)="getAutosuggest($event)" placeholder="Where are you going?">
+                    </div>
+                    <div class="places-container">
+                      
+                      <div class="row no-margin search-item"  *ngFor='let place of autoSuggestData;'>
+                        <div class="row no-margin div-item" (click)="selectPlace($event,place)">
+                          <div class="icon-cont" >
+                            <i class="fa fa-map-marker " aria-hidden="true" style="margin:auto;"></i>
+                          </div>
+                          <div class="name-cont">
+                            <span>{{ place.cn }}</span><br>
+                            <span class="small-text">{{place.c}}</span>
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
+                      <div class="row no-margin" *ngIf="tempPlaces?.length == 0">
+                        <span >No City Found</span>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-2 input-container"  style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">From</span><br>
+                      <span class="input-text">
+                        <input type="date" [(ngModel)]="activityStartDate" id="activityStartDate" >
+                      </span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-2 input-container" style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">To</span><br>
+                      <input type="date" [(ngModel)]="activityEndDate" id="activityEndDate" >
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <!--<div class="row">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Flight" style="    margin-left: 20px;">
+                <label for="vehicle1" style="    margin-left: 10px;
+                margin-right: 20px;font-weight: 100;"> Add a Flight</label>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                <label for="vehicle2" style="    margin-left: 10px;
+                margin-right: 20px;font-weight: 100;"> Add a Car</label><br>
+              </div>-->
+            </div>
+          
+          </div>
+          <div id="Things" class="tabcontent" >
+            <div class="container" style="    padding-top: 1%;">
+              <div class="row" style="display: flex;">
+                <div class="col-5 input-container" style="width:40%">
+                  <div class="input">
+                    <i class="fa fa-map-marker " aria-hidden="true" style="margin:auto;"></i>
+                    <span class="input-text going-text">Going to</span>
+                  </div>
+                </div>
+                <div class="col-2 input-container" style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Check-in</span><br>
+                      <span class="input-text">18 Sep</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-2 input-container" style="width:15%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Check-out</span><br>
+                      <span class="input-text">19 Sep</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="col-3 input-container" style="width:30%">
+                  <div class="input date-container">
+                    <div class="icon">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="cont">
+                      <span class="placeholder">Travellers</span><br>
+                      <span class="input-text">1 room, 2 travellers</span>
+                    </div>
+                    
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          </div>
+        <div class="row btn-container">
+            <Button type="button" class="btn" (click)="navigate()" routerLinkActive="active" >Search</Button>
+        </div>
+    </div>
+  </div>
+  </div>
+  <div class="row search-container qr-box">
+    <div class="col-3 img-container">
+      <img alt="" class="image-media" src="https://a.travel-assets.com/mad-service/footer/bnaBanners/BEX_ROME_iStock_72dpi.jpg">
+    </div>
+    <div class="col-5">
+        <div class="container padding">
+          <div class="row">
+            <span class="title">
+              Our app takes you further
+            </span>
+          </div>
+          <div class="row">
+            <span class="title-text">
+              When you book on the app you can save up to 20% on select hotels while earning double the points with every booking. With these app deals you'll save even more on trips, and that means you can take more trips, and manage it all on the go.
+            </span>
+          </div>
+          <div class="row" style="margin-top: 20px;">
+            <span class="title">
+              Text yourself a download link for easy access
+            </span>
+          </div>
+          <div class="row flex" style="margin-top: 10px;">
+            <div class="col-4">
+              <select class="custom-select input" id="inputGroupSelect01">
+                <option selected>India +91</option>
+                <option value="1">Australia +61</option>
+                <option value="2">Canada +1</option>
+                <option value="3">Japan +81</option>
+              </select>
+            </div>
+            <div class="col-4 margin-left">
+              <input class="input">
+            </div>
+            <div class="col-4 margin-left-auto">
+              <button class="btn btn-primary">Get the app</button>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 10px;">
+            <span class="info-text">
+              By providing your number, you agree to receive a one-time automated text message with a link to get the app. Standard text message rates may apply.
+            </span>
+          </div>
+        </div>
+      
+    </div>
+    <div class="col-2 qr-container">
+      <img alt="QR code" class="uitk-image-media" src="https://a.travel-assets.com/mad-service/qr-code/footer_qr_hp/27_QR_FOOTER_BNA_HP.png">
+      <span class="qr-text">Scan the QR code</span>
+    </div>
+  </div>
+  <div class="row search-container reward-container">
+    <img class="reward-img" src="https://a.travel-assets.com/travel-assets-manager/cmct-5255/POSa-HP-Hero-D-928x398.jpg" alt="Snow" >
+    <div class="col-12 reward-text-container">
+      <div class="row">
+        <div class="col-4 width-20 reward-title">
+          Save instantly with Expedia Rewards
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 width-20 reward-text">
+          You can enjoy access to perks like Member Prices, saving you 10% or more on select hotels. Terms may apply.
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <button class="btn btn-primary reward-btn">See Member Prices</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row search-container reward-container">
+    <img class="plan-img" src="https://a.travel-assets.com/travel-assets-manager/gmvd-1482-bookearly-emea/667x320.jpg" alt="Snow" >
+    <div class="col-12 reward-text-container plan-row">
+      <div class="row">
+        <div class="col-4 width-20 plan-title">
+          Plan ahead and save
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4  plan-text">
+          Book 60 days in advance for 20% off select stays.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row text-footer">
+    <span class="text">Explore a world of travel with Expedia</span><br>
+    <a class="link">Discover new places and experiences</a>
+  </div>
+</div>
+

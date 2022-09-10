@@ -1,0 +1,26 @@
+.bell {
+    font-size: 18px;
+}
+
+.fa-arrow-down {
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.menu-container {
+    width: 100%;
+    text-align: end;
+}
+
+.nav {
+    display: flex;
+}
+
+.more {
+    display: flex;
+    width: 100%;
+}
+
+.header-img {
+    margin-top: -5px;
+}

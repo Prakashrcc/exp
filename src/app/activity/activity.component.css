@@ -1,0 +1,30 @@
+.container {
+    padding: 30px;
+}
+
+.row {
+    margin-left: 10px;
+}
+
+.main-container {
+    width: 80%;
+    margin: 0;
+    display: flex;
+    margin-left: 10%;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px;
+}
+
+img {
+    width: 100%;
+}
+
+.pic-container {
+    width: 30%;
+    margin: auto;
+}
+

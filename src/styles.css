@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+a{
+    color: #337ab7;
+    text-decoration: none;
+    margin-left: 15px;
+    color: black;
+    color: #585757;
+    font-weight: 600;
+}
+
+a:hover {
+    background-color: transparent;
+}
+
+.container {
+    width: 100%;
+}
+
+.nav-header {
+    padding: 30px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+
+.btn {
+    background: #5050fb;
+    color: white;
+    margin-top: 20px;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.tab-container {
+    height: 40px;
+    border-bottom: 1px solid #80808075;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.search-container {
+    margin: 30px;
+    border-radius: 5px;
+    border: 1px solid #80808075;
+    padding: 30px;
+}
+
+.nav-tabs {
+    width: fit-content;
+    /* margin: 0; */
+    /* display: block; */
+    margin: auto;
+    border: none;
+}
+/*
+.col-1 {
+    width: 10%;
+}
+
+.col-2 {
+    width: 20%;
+}
+
+.col-3 {
+    width: 30%;
+}
+
+.col-4 {
+    width: 40%;
+}
+
+.col-5 {
+    width: 50%;
+}
+
+.col-6 {
+    width: 60%;
+}
+
+.col-7 {
+    width: 70%;
+}
+
+.col-8 {
+    width: 80%;
+}
+
+.col-9 {
+    width: 90%;
+}
+
+.col-10 {
+    width: 100%;
+}
+
+.row {
+    display:flex;
+}*/
+
+

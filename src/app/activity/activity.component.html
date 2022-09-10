@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="row main-container" *ngFor='let activity of activityData;'>
+            <div class="pic-container">
+                <img src="{{activity.content.media.primaryImage.url}}">
+            </div>
+            <div class="body-container">
+                <div class="row">
+                    <div class="width-80">
+                        <h4>{{activity.name}} </h4>
+                    </div>
+                    <div class="width-20">
+                        <span>{{activity.displayFare.currency}} {{activity.displayFare.totalFareStartsFrom}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <span>{{activity.content.location.address.city.name}}, {{activity.content.location.address.state.name}}</span>
+                </div>
+                <div class="row">
+                    <span>{{activity.content.summary}}</span>
+                </div>
+                <div class="row">
+                    <span>Duration - {{activity.content.duration}}</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
